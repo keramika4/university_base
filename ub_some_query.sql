@@ -13,9 +13,9 @@ limit 10;
 
 -- список всех преподавателей и число их студентов
 select
-	t.teacherid
+    t.teacherid
     , t.first_name
-  	, t.second_name
+    , t.second_name
     , case when sum(g.students_cnt) > 0 then sum(g.students_cnt) else 0 end as students_cnt
 from (
 	select
@@ -43,7 +43,7 @@ group by 1, 2, 3
 
 -- список всех студентов и их преподавателей
 select
-	s.studentid
+    s.studentid
     , s.first_name as student_first_name
     , s.second_name as student_second_name
     , s.group_name
